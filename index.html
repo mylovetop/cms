@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>管理系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="theme/default/bootstrap-3.0.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="theme/default/bootstrap-3.0.3/dist/css/bootstrap-theme.min.css">
+
+
+
+    <link rel="stylesheet" href="theme/default/css/normalize.debug.css">
+    <link rel="stylesheet" href="theme/default/css/icon.css">
+    <link rel="stylesheet" href="theme/default/css/component.css">
+    <link rel="stylesheet" href="theme/default/css/animate.css">
+
+    <!--IE8-->
+    <!--[if lte IE 9]>
+    <script src="theme/default/bootstrap-3.0.3/dist/ie8/respond.min.js"></script>
+    <script src="theme/default/bootstrap-3.0.3/dist/ie8/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!--angular -->
+    <script src="lib/vendor/angular-1.2.13/angular.js"></script>
+    <script src="lib/vendor/angular-1.2.13/angular-touch.js"></script>
+    <script src="lib/vendor/angular-1.2.13/angular-animate.js"></script>
+    <script src="lib/vendor/angular-1.2.13/angular-resource.js"></script>
+    <script src="lib/vendor/angular-1.2.13/angular-route.js"></script>
+    <script src="lib/vendor/angular-1.2.13/angular-cookies.js"></script>
+    <script src="lib/vendor/angular-1.2.13/angular-loader.js"></script>
+    <script src="lib/vendor/angular-1.2.13/angular-sanitize.js"></script>
+
+
+
+    <script src="lib/common.js"></script>
+    <script src="lib/constant.js"></script>
+
+    <script src="lib/module/module.js"></script>
+
+    <!---Controller-->
+    <script src="lib/controller/system/home.js"></script>
+    <!--系统-->
+    <script src="lib/controller/system/404.js"></script>
+    <script src="lib/controller/system/500.js"></script>
+    <script src="lib/controller/system/lock-screen.js"></script>
+    <script src="lib/controller/system/sign-in.js"></script>
+
+
+    <!---directive--->
+    <script src="lib/directive/dit-nav.js"></script>
+    <script src="lib/directive/dit-header.js"></script>
+
+
+
+    <script src="lib/app.js"></script>
+
+
+</head>
+
+<body ng-app="App" ng-cloak>
+    <div ng-controller="AppCtrl">
+        <dit-header ng-model="header"></dit-header>
+        <div class="container view-body">
+            <div class="row">
+                <!--<aside ng-include="'views/system/nav.html'"-->
+                       <!--id="nav-container"></aside>-->
+
+                <dit-nav ng-model="nav"></dit-nav>
+
+                <div class="view-container col-md-10 col-lg-10">
+                    <section ng-view class="animate-fade-up" id="content"></section>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+
+</html>

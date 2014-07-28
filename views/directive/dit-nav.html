@@ -1,0 +1,18 @@
+<div class="view-nav col-md-2 col-lg-2">
+    <ul class="nav">
+        <li ng-repeat="item in ditNavObj" ng-click="ditNavClick(item)" ng-class="item.cssSelected" class="view-nav-item active">
+            <a href="#">
+                <span ng-bind="item.name"></span>
+                <span ng-if="item.hasChild" ng-show="!item.hasExpand" class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+            <ul ng-if="item.hasExpand" class="nav">
+                <li  ng-repeat="it in item.items" ng-click="ditNavItemClick(it, item, $event)" ng-class="it.cssSelected">
+                    <a href="#">
+                        <span ng-bind="it.name"></span>
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
